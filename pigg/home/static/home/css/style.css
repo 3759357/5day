@@ -51,7 +51,9 @@ p {
             color: #333; /* 링크 색상 설정 */
             margin: 0 10px; /* 링크 간 간격 설정 */
         }
+.left{
 
+}
 
 .container {
             display: flex;
