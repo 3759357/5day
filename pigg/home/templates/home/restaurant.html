@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-{%load static%}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
     <link rel="icon" href="{% static 'home/main_feed_image/main_feed4.png' %}" type="image/x-icon">
-
     <title>오일내</title>
+    <style>
+        .container {
+            position: relative; /* 부모 요소에 상대적 위치 설정 */
+            display: flex;
+            align-items: center;
+        }
+        .container img {
+            width: 100%;
+            height: auto;
+        }
+        .overlay-link {
+            position: absolute;
+            width: 2.7%; /* 버튼의 너비 설정 */
+            display: block;
+            color :black;
+        }
+
+    </style>
 </head>
 <body>
 
-<div class="top">
+<div class="top" style="background-image: url('{% static 'home/bgimg.png' %}'); background-size: cover;">
     <a href="/">
-            <img src="{% static 'home/main_feed_image/main_feed4.png' %}" alt="Main Feed Image 1">
-        </a>
+        <img src="{% static 'home/main_feed_image/main_feed4.png' %}" alt="Main Feed Image 1">
+    </a>
     <a href="/history">오일내 스토리</a>
     <a href="/style">오일내 스타일</a>
     <a href="/franchise">가맹 안내</a>
@@ -23,20 +40,84 @@
     <a href="/story">오일내 소식</a>
 </div>
 
+<div class="container fade-in">
+    <img src="{% static 'home/restaurant/restaurant1.png' %}" >
 
+    <div class="overlay-link" style="left: 34.5%; top: 40%;">
+        <a target="_blank" href="https://naver.me/FHleNM1M">
+            <img src="{% static 'home/restaurant/rest1.png' %}" style="display: block; margin-left: auto;">
+        </a>
+    </div>
 
-<div class="container">
-        <img src="{% static 'home/restaurant/restaurant1.png' %}" alt="Main Feed Image 1">
+    <div class="overlay-link" style="left: 42.3%; top: 39.5%;">
+        <a target="_blank" href="https://naver.me/xFoL1cSn">
+            <img src="{% static 'home/restaurant/rest2.png' %}" style="display: block; margin-left: auto;">
+        </a>
+    </div>
+
+    <div class="overlay-link" style="left: 46%; top: 42.5%;">
+        <a target="_blank" href="https://naver.me/5K58nsis">
+            <img src="{% static 'home/restaurant/rest3.png' %}" style="display: block; margin-left: auto;">
+        </a>
+    </div>
+
+    <div class="overlay-link" style="left: 51%; top: 36%;">
+        <a target="_blank" href="https://naver.me/xqo6smxR">
+            <img src="{% static 'home/restaurant/rest4.png' %}" style="display: block; margin-left: auto;">
+        </a>
+    </div>
+
+    <div class="overlay-link" style="left: 51%; top: 49%;">
+        <a target="_blank" href="https://naver.me/GA691Ewg">
+            <img src="{% static 'home/restaurant/rest5.png' %}" style="display: block; margin-left: auto;">
+        </a>
+    </div>
+
+    <div class="overlay-link" style="left: 58%; top: 44%;">
+        <a target="_blank" href="https://naver.me/x2h7TUkh">
+            <img src="{% static 'home/restaurant/rest6.png' %}" style="display: block; margin-left: auto;">
+        </a>
+    </div>
+
+    <div class="vertical-links" style="position: absolute; left: 15.5%; top: 14%; writing-mode: vertical-lr; font-size: 1.6vw; ">
+        <a target="_blank" href="https://naver.me/FHleNM1M">
+            혁신도시점
+        </a>
+    </div>
+    <div class="vertical-links" style="position: absolute; left: 19%; top: 14%; writing-mode: vertical-lr; font-size: 1.6vw;">
+        <a target="_blank" href="https://naver.me/xFoL1cSn">
+            문학대점
+        </a>
+    </div>
+    <div class="vertical-links" style="position: absolute; left: 22.5%; top: 14%; writing-mode: vertical-lr; font-size: 1.6vw;">
+        <a target="_blank" href="https://naver.me/xqo6smxR">
+            신시가지점
+        </a>
+    </div>
+    <div class="vertical-links" style="position: absolute; left: 26%; top: 14%; writing-mode: vertical-lr; font-size: 1.6vw;">
+        <a target="_blank" href="https://naver.me/x2h7TUkh">
+            전북대점
+        </a>
+    </div>
+    <div class="vertical-links" style="position: absolute; left: 29.5%; top: 14%; writing-mode: vertical-lr; font-size: 1.6vw;">
+        <a target="_blank" href="https://naver.me/GA691Ewg">
+            중화산점
+        </a>
+    </div>
+    <div class="vertical-links" style="position: absolute; left: 33%; top: 14%; writing-mode: vertical-lr; font-size: 1.6vw;">
+        <a target="_blank" href="https://naver.me/x2h7TUkh">
+            객사점
+        </a>
     </div>
 
 
-
+</div>
 
 <div class="bottom">
     <a href="/">
-            <img src="{% static 'home/main_feed_image/main_feed3.png' %}" alt="Main Feed Image 1">
-        </a>
-<a href="/history">오일내 스토리</a>
+        <img src="{% static 'home/main_feed_image/main_feed3.png' %}" alt="Main Feed Image 1">
+    </a>
+    <a href="/history">오일내 스토리</a>
     <a href="/style">오일내 스타일</a>
     <a href="/franchise">가맹 안내</a>
     <a href="/menu">메뉴 안내</a>
@@ -44,8 +125,6 @@
     <a href="/review">고객센터</a>
     <a href="/story">오일내 소식</a>
 </div>
-
-
 
 </body>
 </html>

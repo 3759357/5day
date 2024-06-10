@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-{%load static%}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
     <link rel="icon" href="{% static 'home/main_feed_image/main_feed4.png' %}" type="image/x-icon">
-
     <title>오일내</title>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 
 <div class="top">
     <a href="/">
-            <img src="{% static 'home/main_feed_image/main_feed4.png' %}" alt="Main Feed Image 1">
-        </a>
+        <img src="{% static 'home/main_feed_image/main_feed4.png' %}" alt="Main Feed Image 1">
+    </a>
     <a href="/history">오일내 스토리</a>
     <a href="/style">오일내 스타일</a>
     <a href="/franchise">가맹 안내</a>
@@ -23,29 +31,27 @@
     <a href="/story">오일내 소식</a>
 </div>
 
-
-<div class="container">
-        <img src="{% static 'home/style/style.png' %}" alt="Main Feed Image 1">
-    </div>
-<div class="container">
-        <img src="{% static 'home/style/style2.png' %}" alt="Main Feed Image 1">
-    </div>
-<div class="container">
-        <img src="{% static 'home/style/style3.png' %}" alt="Main Feed Image 1">
-    </div>
-
-<div class="container">
-        <img src="{% static 'home/style/style4.png' %}" alt="Main Feed Image 1">
-    </div>
-<div class="container">
-        <img src="{% static 'home/style/style5.png' %}" alt="Main Feed Image 1">
-    </div>
+<div class="container fade-in">
+    <img src="{% static 'home/style/style.png' %}" alt="Main Feed Image 1">
+</div>
+<div class="container fade-in">
+    <img src="{% static 'home/style/style2.png' %}" alt="Main Feed Image 1">
+</div>
+<div class="container fade-in">
+    <img src="{% static 'home/style/style3.png' %}" alt="Main Feed Image 1">
+</div>
+<div class="container fade-in">
+    <img src="{% static 'home/style/style4.png' %}" alt="Main Feed Image 1">
+</div>
+<div class="container fade-in">
+    <img src="{% static 'home/style/style5.png' %}" alt="Main Feed Image 1">
+</div>
 
 <div class="bottom">
     <a href="/">
-            <img src="{% static 'home/main_feed_image/main_feed3.png' %}" alt="Main Feed Image 1">
-        </a>
-<a href="/history">오일내 스토리</a>
+        <img src="{% static 'home/main_feed_image/main_feed3.png' %}" alt="Main Feed Image 1">
+    </a>
+    <a href="/history">오일내 스토리</a>
     <a href="/style">오일내 스타일</a>
     <a href="/franchise">가맹 안내</a>
     <a href="/menu">메뉴 안내</a>
@@ -54,7 +60,29 @@
     <a href="/story">오일내 소식</a>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elements = document.querySelectorAll('.fade-in');
+        var options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
+        var callback = function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        };
+
+        var observer = new IntersectionObserver(callback, options);
+        elements.forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -7,11 +7,7 @@
     <link rel="icon" href="{% static 'home/main_feed_image/main_feed4.png' %}" type="image/x-icon">
 
     <title>오일내</title>
-    <style>
-        body{
-            background-image:url("{% static 'home/review/back.png' %}");
-        }
-    </style>
+
 </head>
 <body>
 
@@ -29,21 +25,32 @@
 </div>
 
 <div class="container">
+    <img src="{% static 'home/review/back.png' %}" >
+    <div style="position: absolute; left: 24.5%; top: 30%; width: 7%;">
 
-       <p>제목</p>
-<input type="text" placeholder="제목" />
-<p>성명</p><br>
-<input type="text" placeholder="성명" />
-<p>연락처</p><br>
-<input type="text" placeholder="연락처" />
-<p>방문지점</p><br>
-<input type="text" placeholder="방문지점" />
-<p>내용</p><br>
-<input type="text" placeholder="내용" />
+            <img src="{% static 'home/review/message.png' %}" style="display: block; margin-left: auto;">
+
+    </div>
+
+    <div style="position: absolute; left: 34.5%;">
+        <p>제목</p>
+        <input type="text" placeholder="제목" height="30%" width="30%" />
+        <p>성명</p><br>
+        <input type="text" placeholder="성명" />
+        <p>연락처</p><br>
+        <input type="text" placeholder="연락처" />
+        <p>방문지점</p><br>
+        <input type="text" placeholder="방문지점" />
+        <p>내용</p><br>
+        <input type="text" placeholder="내용" />
+    </div>
+    <div style="position: absolute; left: 24.5%; top: 30%; width: 7%;">
     <a href="/">
-    <img src="{% static 'home/review/send.png' %}" href="/">
-        </a>
+        <img src="{% static 'home/review/send.png' %}" href="/">
+    </a>
+    </div>
 </div>
+
 
 
 </body>

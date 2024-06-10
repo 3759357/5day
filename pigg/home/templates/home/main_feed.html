@@ -5,15 +5,24 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
     <link rel="icon" href="{% static 'home/main_feed_image/main_feed4.png' %}" type="image/x-icon">
-
     <title>오일내</title>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 
-<div class="top">
+<div class="main-top" >
+
     <a href="/">
-            <img src="{% static 'home/main_feed_image/main_feed4.png' %}" alt="Main Feed Image 1">
-        </a>
+        <img src="{% static 'home/main_feed_image/main_feed4.png' %}" alt="Main Feed Image 1">
+    </a>
     <a href="/history">오일내 스토리</a>
     <a href="/style">오일내 스타일</a>
     <a href="/franchise">가맹 안내</a>
@@ -23,69 +32,70 @@
     <a href="/story">오일내 소식</a>
 </div>
 
-<div class="container">
-
-    <img src="{% static 'home/main_feed_image/Group 90.png' %}" alt="Main Feed Image 1" >
-    <img src="{% static 'home/main_feed_image/Group 91.png' %}" alt="Main Feed Image 1" >
-    <img src="{% static 'home/main_feed_image/main_feed1.png' %}" alt="Main Feed Image 1" >
+<div class="container" style="position: relative;">
+    <img src="{% static 'home/main_feed_image/bgimg.png' %}" style="width: 100%;">
 
 
+    <div class="container fade-in"style="position: absolute; left: 5%; top: 5%; width: 5%;">
+        <img src="{% static 'home/main_feed_image/Group 90.png' %}" style="display: block; margin-left: auto;">
+    </div>
+    <div class="container fade-in"style="position: absolute; left: 13%; top: 5%; width: 5%;">
+        <img src="{% static 'home/main_feed_image/Group 91.png' %}" style="display: block; margin-left: auto;">
+    </div>
+    <div class="container fade-in"style="position: absolute; right: 0%; top: 0%; width: 78%;">
+        <img src="{% static 'home/main_feed_image/main_feed1.png' %}" style="display: block; margin-right: auto;">
+    </div>
 </div>
 
 
-<div class="container">
-        <img src="{% static 'home/main_feed_image/feed2.png' %}"  >
-
-    <div style="position: absolute;">
+<div class="container fade-in" style="position: relative;">
+    <img src="{% static 'home/main_feed_image/feed2.png' %}" style="width: 100%;">
+    <div style="position: absolute; right: 5%; top: 15%; width: 4%;">
         <a href="/style">
-            <img src="{% static 'home/main_feed_image/button_style.png' %}" >
+            <img src="{% static 'home/main_feed_image/button_style.png' %}" style="display: block; margin-left: auto;">
         </a>
     </div>
+</div>
 
-    </div>
+<div class="container fade-in">
+    <img src="{% static 'home/main_feed_image/feed3.png' %}" alt="Main Feed Image 1">
+</div>
 
-<div class="container">
-        <img src="{% static 'home/main_feed_image/feed3.png' %}" alt="Main Feed Image 1">
-    </div>
+<div class="container fade-in">
+    <img src="{% static 'home/main_feed_image/feed4.png' %}" alt="Main Feed Image 1">
+</div>
 
-<div class="container">
-        <img src="{% static 'home/main_feed_image/feed4.png' %}" alt="Main Feed Image 1">
-    </div>
-
-<div class="container">
-        <img src="{% static 'home/main_feed_image/feed5.png' %}" alt="Main Feed Image 1">
-    <div style="position: absolute;">
+<div class="container fade-in" style="position: relative;">
+    <img src="{% static 'home/main_feed_image/feed5.png' %}" style="width: 100%;">
+    <div style="position: absolute; left: 5%; top: 13%; width: 3.5%;">
         <a href="/style">
-            <img src="{% static 'home/main_feed_image/button_menu.png' %}" >
+            <img src="{% static 'home/main_feed_image/button_menu.png' %}" style="display: block; margin-left: auto;">
         </a>
     </div>
-    </div>
+</div>
 
-<div class="container">
-        <img src="{% static 'home/main_feed_image/feed6.png' %}" alt="Main Feed Image 1">
-
-    <div style="position: absolute;">
-        <a href="/style">
-            <img src="{% static 'home/main_feed_image/button_franchise.png' %}" >
+<div class="container fade-in" style="position: relative;">
+    <img src="{% static 'home/main_feed_image/feed6.png' %}" style="width: 100%;">
+    <div style="position: absolute; right: 4.7%; top: 82%; width: 13%;">
+        <a href="/franchise">
+            <img src="{% static 'home/main_feed_image/button_franchise.png' %}" style="display: block; margin-left: auto;">
         </a>
     </div>
+</div>
 
-    </div>
-<div class="container">
-        <img src="{% static 'home/main_feed_image/feed7.png' %}" alt="Main Feed Image 1">
-    </div>
-<div class="container">
-        <img src="{% static 'home/main_feed_image/feed8.png' %}" alt="Main Feed Image 1">
-    </div>
+<div class="container fade-in">
+    <img src="{% static 'home/main_feed_image/feed7.png' %}" alt="Main Feed Image 1">
+</div>
 
-
-
+<div class="container fade-in">
+    <img src="{% static 'home/main_feed_image/feed8.png' %}" alt="Main Feed Image 1">
+</div>
 
 <div class="bottom">
     <a href="/">
-            <img src="{% static 'home/main_feed_image/main_feed3.png' %}" alt="Main Feed Image 1">
-        </a>
-<a href="/history">오일내 스토리</a>
+        <img src="{% static 'home/main_feed_image/main_feed3.png' %}" alt="Main Feed Image 1">
+    </a>
+    <a href="/history">오일내 스토리</a>
     <a href="/style">오일내 스타일</a>
     <a href="/franchise">가맹 안내</a>
     <a href="/menu">메뉴 안내</a>
@@ -94,7 +104,29 @@
     <a href="/story">오일내 소식</a>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elements = document.querySelectorAll('.fade-in');
+        var options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
+        var callback = function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        };
+
+        var observer = new IntersectionObserver(callback, options);
+        elements.forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
 
 </body>
 </html>
