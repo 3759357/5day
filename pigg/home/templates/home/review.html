@@ -27,57 +27,52 @@
     <a href="/story">오일내 소식</a>
 </div>
 
-<div class="container"style="position: relative;">
-    <img src="{% static 'home/review/back.png' %}" >
+<div class="container" style="position: relative;">
+    <img src="{% static 'home/review/back.png' %}">
     <div style="position: absolute; left: 14.5%; top: 25%; width: 10%;">
-
-            <img src="{% static 'home/review/message.png' %}" style="display: block; margin-left: auto;">
-
+        <img src="{% static 'home/review/message.png' %}" style="display: block; margin-left: auto;">
     </div>
 
-    <div style="position: absolute; left: 20.5%; top: 15%; width: 10%;">
-        <p style="font-size: 2rem;">제목</p>
+    <div style="position: absolute; left: 30.5%; top: 13%; padding:1%;width: 100%; height:auto;">
+        <p style="font-size: 1.7vw; padding:1%;">제목</p>
+        <input style="position: absolute; font-size: 1vw;width:60%; height:10%;" type="text" name="my_name" size="20" placeholder="제목을 입력해주세요.">
+        <p style="font-size: 1.7vw; padding:1%;">&ensp;</p>
+        <p style="font-size: 1.7vw; padding:1%;">성명</p>
+        <input style="position: absolute;font-size: 1vw;width:60%; height:10%;" type="text" name="my_name" size="20" placeholder="성명을 입력해주세요.">
+        <p style="font-size: 1.7vw; padding:1%;">&ensp;</p>
+        <p style="font-size: 1.7vw; padding:1%;">연락처</p>
+        <input style="position: absolute;font-size: 1vw;width:60%; height:10%;" type="text" name="my_name" size="20" placeholder="연락처를 입력해주세요.">
+        <p style="font-size: 1.7vw; padding:1%;">&ensp;</p>
+        <p style="font-size: 1.7vw; padding:1%;">방문지점</p>
+        <input style="position: absolute;font-size: 1vw;width:60%; height:10%;" type="text" name="my_name" size="20" placeholder="방문지점을 입력해주세요.">
+        <p style="font-size: 1.7vw; padding:1%;">&ensp;</p>
+        <p style="font-size: 1.7vw; padding:1%;">내용</p>
+        <input style="position: absolute;font-size: 1vw;width:60%; height:30%;" type="text" name="my_name" size="20" placeholder="내용을 입력해주세요.">
     </div>
 
-
-    <div style="position: absolute; right: 10.5%; top: 82%; width: 10%;">
-    <a href="/">
-        <img src="{% static 'home/review/send.png' %}" href="/">
-    </a>
+    <div style="position: absolute; right: 8.4%; top: 82%; width: 10%;">
+        <a href="/">
+            <img src="{% static 'home/review/send.png' %}">
+        </a>
     </div>
 </div>
 
 
 <footer class="bottom">
 
-    <div style="position: absolute;left :30%; ">
-        <img src="{% static 'home/main_feed_image/main_feed3.png' %}" style="display: block;width: 70%; ">
+    <div style="position: absolute;left :30%;">
+        <img src="{% static 'home/main_feed_image/main_feed3.png' %}" >
     </div>
 
-    <div style="position: relative; left :70%; top:80%;">
+    <div style="position: relative; left :70%; ">
         <br>
-        <img src="{% static 'home/main_feed_image/bottom_bar.png' %}" style="display: block;width: 80%;  ">
-    </div>
-    <div style="position: relative; left :5%; top :2%; line-height:300%">
-        <br>
-        <br>
-    <a href="/history">오일내 스토리</a>
-    <a href="/style">오일내 스타일</a>
-    <a href="/franchise">가맹 안내</a>
-    <a href="/menu">메뉴 안내</a>
-    <a href="/restaurant">매장 안내</a>
-    <a href="/review">고객센터</a>
-    <a href="/story">오일내 소식</a>
+        <img src="{% static 'home/main_feed_image/bottom_bar.png' %}" style="display: block; ">
     </div>
 
-    <div style="position: relative; left :25%; line-height:300%">
-    <a>가맹번호 : 1551-5105 </a><br>
-    <a href="/">
-        인스타 @5day_official
-    </a><br>
-    <a>대표자 전현수</a>
-    </div>
+
 </footer>
+
+
 
 
 </body>

@@ -1,5 +1,3 @@
-/* 전역 스타일 추가 */
-
 @font-face {
     font-family: 'MapoAgape';
     font-weight: normal;
@@ -8,9 +6,10 @@
     src: url('https://cdn.jsdelivr.net/gh/webfontworld/mapo/MapoAgape.eot?#iefix') format('embedded-opentype'),
          url('https://cdn.jsdelivr.net/gh/webfontworld/mapo/MapoAgape.woff2') format('woff2'),
          url('https://cdn.jsdelivr.net/gh/webfontworld/mapo/MapoAgape.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/mapo/MapoAgape.ttf') format("truetype");
+         url('https://cdn.jsdelivr.net/gh/webfontworld/mapo/MapoAgape.ttf') format('truetype');
     font-display: swap;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -18,74 +17,62 @@
     font-family: 'MapoAgape';
 }
 
-a {
-  text-decoration: none;
-  font-family: 'MapoAgape';
-  color : #7D5D58;
-  margin-right: 20px;
+html, body {
+    width: 100%;
+    height: auto%;
+
 }
+
+a {
+    text-decoration: none;
+    font-family: 'MapoAgape';
+    color: #7D5D58;
+    padding: 20px;
+}
+
 .title {
-  font-size: 2em;
+    font-size: 2em;
 }
 
 p {
-    padding: 20px;
+    display: flex;
     color: #7D5D58;
-    font-size: 20px;
-    margin: 20px 0;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
 }
 
 /* Background images for each paragraph */
 .bg-image-1 {
     background-image: url('image49.png');
-    color : #7D5D58;
+    color: #7D5D58;
     display: flex;
 }
+
 .bg-image-1 img {
+    display: flex;
     width: 100%; /* 이미지를 화면 너비에 맞춤 */
     height: auto; /* 이미지 높이 자동 조정 */
-
 }
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .main-top {
     background-image: url('image49.png');
-    color : #7D5D58;
+    color: #7D5D58;
     display: flex;
     justify-content: space-between; /* 아이템 간 공간 분배 */
     align-items: center;
     font-family: 'MapoAgape';
-    padding: 20px;
-}
-.top {
-    display: flex;
-    justify-content: space-between; /* 아이템 간 공간 분배 */
-    align-items: center;
 
-    padding: 20px; /* 패딩 추가 */
-}
-.link-container img {
-    width: 100px; /* 이미지 너비 설정 */
-    height: auto; /* 이미지 높이 자동 조정 */
-}
-.links {
-    display: flex;
-    gap: 10px; /* 링크 간 간격 설정 */
-}
-.links a {
-    text-decoration: none; /* 링크 밑줄 제거 */
-    color: #333; /* 링크 색상 설정 */
-    margin: 0 10px; /* 링크 간 간격 설정 */
-}
-
-.left {
 }
 
 .container {
     display: flex;
     align-items: center; /* 요소들을 세로 중앙에 정렬 */
 }
+
 .container img {
     width: 100%; /* 이미지를 화면 너비에 맞춤 */
     height: auto; /* 이미지 높이 자동 조정 */
@@ -95,22 +82,18 @@ p {
     display: flex;
     align-items: center;
     background-color: #7A6966; /* 배경색 설정 */
-    padding: 0%; /* 패딩 추가 */
-
+    height: 10px;
+    width: auto;
 }
+
 .bottom a {
+    display: flex;
     text-decoration: none; /* 링크 밑줄 제거 */
     color: white; /* 링크 색상 설정 */
-
 }
 
 input {
-  width: 500px;
-  height: 32px;
-  font-size: 15px;
-  border: 0;
-  border-radius: 15px;
-  outline: none;
-  padding-left: 10px;
-  background-color: rgb(233, 233, 233);
+    display: flex;
+    border-width: thin;
+    background-color: transparent;
 }
