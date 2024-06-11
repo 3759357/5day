@@ -31,7 +31,7 @@ a {
 p {
     padding: 20px;
     color: #7D5D58;
-    font-size: 16px;
+    font-size: 20px;
     margin: 20px 0;
     background-size: cover;
     background-position: center;
@@ -92,12 +92,25 @@ p {
 }
 
 .bottom {
+    display: flex;
+    align-items: center;
     background-color: #7A6966; /* 배경색 설정 */
-    padding: 20px; /* 패딩 추가 */
-    text-align: center; /* 텍스트 중앙 정렬 */
+    padding: 0%; /* 패딩 추가 */
+
 }
 .bottom a {
     text-decoration: none; /* 링크 밑줄 제거 */
     color: white; /* 링크 색상 설정 */
-    margin: 0 10px; /* 링크 간격 설정 */
+
+}
+
+input {
+  width: 500px;
+  height: 32px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  padding-left: 10px;
+  background-color: rgb(233, 233, 233);
 }

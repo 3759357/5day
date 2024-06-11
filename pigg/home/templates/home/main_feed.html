@@ -14,6 +14,70 @@
         .fade-in.visible {
             opacity: 1;
         }
+                /* slider */
+               /* slider */
+        /* slider */
+.slider__wrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+/* 이미지 보이는 부분 */
+.slider__img {
+    position: relative;
+
+    height: auto;
+    overflow: hidden;
+    width: 80%;
+    left: 63%;
+}
+
+/* 이미지 감싸고 있는 부모 : 움직이는 부분 */
+.slider__inner {
+    display: flex;
+    width: calc(33.333333% * 10); /* 10개의 이미지를 포함한 전체 너비 */
+    height: 75vw; /* 화면 너비의 60% (원하는 비율로 조정 가능) */
+    transition: all 0.6s;
+}
+
+/* 개별적인 이미지 */
+.slider {
+    position: relative;
+    width: 100%; /* 화면 너비의 100% */
+    height: auto; /* 높이는 자동으로 조정됨 */
+}
+
+.slider img {
+    width: 100%; /* 이미지 너비를 부모 요소에 맞게 조정 */
+    height: auto; /* 이미지 높이를 비율에 맞게 자동으로 조정 */
+}
+
+
+
+        .slider__btn a {
+            position: absolute;
+            top: 60%;
+            width: 5%;
+            height: auto;
+            line-height: 50px;
+            transition: all 0.2s;
+            display: block;
+            color: #fff;
+            left:143%;
+        }
+
+        .slider__btn a.prev {
+            top: 0;
+            left 50px;
+
+        }
+        .slider__btn a.next {
+            top: 0;
+
+
+        }
+
     </style>
 </head>
 <body>
@@ -23,6 +87,8 @@
     <a href="/">
         <img src="{% static 'home/main_feed_image/main_feed4.png' %}" alt="Main Feed Image 1">
     </a>
+    <div>&ensp;</div><div>&ensp;</div><div>&ensp;</div><div>&ensp;</div><div>&ensp;</div><div>&ensp;</div>
+    <div>&ensp;</div><div>&ensp;</div><div>&ensp;</div><div>&ensp;</div><div>&ensp;</div>
     <a href="/history">오일내 스토리</a>
     <a href="/style">오일내 스타일</a>
     <a href="/franchise">가맹 안내</a>
@@ -61,18 +127,45 @@
     <img src="{% static 'home/main_feed_image/feed3.png' %}" alt="Main Feed Image 1">
 </div>
 
-<div class="container fade-in">
-    <img src="{% static 'home/main_feed_image/feed4.png' %}" alt="Main Feed Image 1">
-</div>
-
 <div class="container fade-in" style="position: relative;">
-    <img src="{% static 'home/main_feed_image/feed5.png' %}" style="width: 100%;">
-    <div style="position: absolute; left: 5%; top: 13%; width: 3.5%;">
-        <a href="/style">
+    <img src="{% static 'home/main_feed_image/feed4.png' %}" style="width: 100%;">
+
+
+    <div id="main"style="position: absolute; top: 102%;  transform: translate(-50%, -50%);">
+        <section id="sliderType01">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider__inner" >
+                        <div class="slider" role="group" aria-label="1/10"><img src="{% static 'home/menu/1.png' %}" ></div>
+                        <div class="slider" role="group" aria-label="2/10"><img src="{% static 'home/menu/2.png' %}" ></div>
+                        <div class="slider" role="group" aria-label="3/10"><img src="{% static 'home/menu/3.png' %}" ></div>
+                        <div class="slider" role="group" aria-label="4/10"><img src="{% static 'home/menu/4.png' %}" ></div>
+                        <div class="slider" role="group" aria-label="5/10"><img src="{% static 'home/menu/5.png' %}" ></div>
+                        <div class="slider" role="group" aria-label="6/10"><img src="{% static 'home/menu/6.png' %}" ></div>
+                        <div class="slider" role="group" aria-label="7/10"><img src="{% static 'home/menu/7.png' %}" ></div>
+                        <div class="slider" role="group" aria-label="8/10"><img src="{% static 'home/menu/8.png' %}" ></div>
+                        <div class="slider" role="group" aria-label="9/10"><img src="{% static 'home/menu/9.png' %}" ></div>
+                        <div class="slider" role="group" aria-label="10/10"><img src="{% static 'home/menu/10.png' %}" ></div>
+                    </div>
+                </div>
+                <div class="slider__btn">
+
+                    <a href="#" class="next" role="button" aria-label="오른쪽 이미지" style="top:10%;">
+                        <img src="{% static 'home/main_feed_image/button_next.png' %}" style="display: block; margin-left: auto;">
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <div style="position: absolute; left: 5%; top: 15%; width: 4%;">
+        <a href="/menu">
             <img src="{% static 'home/main_feed_image/button_menu.png' %}" style="display: block; margin-left: auto;">
         </a>
     </div>
 </div>
+
+
 
 <div class="container fade-in" style="position: relative;">
     <img src="{% static 'home/main_feed_image/feed6.png' %}" style="width: 100%;">
@@ -91,10 +184,22 @@
     <img src="{% static 'home/main_feed_image/feed8.png' %}" alt="Main Feed Image 1">
 </div>
 
-<div class="bottom">
-    <a href="/">
-        <img src="{% static 'home/main_feed_image/main_feed3.png' %}" alt="Main Feed Image 1">
-    </a>
+
+
+
+<footer class="bottom">
+
+    <div style="position: absolute;left :30%; ">
+        <img src="{% static 'home/main_feed_image/main_feed3.png' %}" style="display: block;width: 70%; ">
+    </div>
+
+    <div style="position: relative; left :70%; top:80%;">
+        <br>
+        <img src="{% static 'home/main_feed_image/bottom_bar.png' %}" style="display: block;width: 80%;  ">
+    </div>
+    <div style="position: relative; left :5%; top :2%; line-height:300%">
+        <br>
+        <br>
     <a href="/history">오일내 스토리</a>
     <a href="/style">오일내 스타일</a>
     <a href="/franchise">가맹 안내</a>
@@ -102,7 +207,16 @@
     <a href="/restaurant">매장 안내</a>
     <a href="/review">고객센터</a>
     <a href="/story">오일내 소식</a>
-</div>
+    </div>
+
+    <div style="position: relative; left :25%; line-height:300%">
+    <a>가맹번호 : 1551-5105 </a><br>
+    <a href="/">
+        인스타 @5day_official
+    </a><br>
+    <a>대표자 전현수</a>
+    </div>
+</footer>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -124,6 +238,66 @@
         var observer = new IntersectionObserver(callback, options);
         elements.forEach(element => {
             observer.observe(element);
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const sliderWrap = document.querySelector('.slider__wrap');
+        const sliderInner = document.querySelector('.slider__inner');
+        const sliders = document.querySelectorAll('.slider');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const dotsContainer = document.querySelector('.slider__dot');
+
+        let currentIndex = 0;
+        const totalSlides = sliders.length;
+
+        // Function to move the slider
+        function moveSlider(index) {
+            if (index >= totalSlides) {
+                index = 0;
+            } else if (index < 0) {
+                index = totalSlides - 1;
+            }
+            currentIndex = index;
+            sliderInner.style.transform = `translateX(${-10 * index}%)`;
+             if (currentIndex === totalSlides-3) {
+        setTimeout(() => {
+            sliderInner.style.transition = 'none';
+            sliderInner.style.transform = 'translateX(0)';
+        }, 33); // Adjust the timeout according to your transition duration
+    }
+        }
+
+
+
+        // Event listeners
+        nextBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            moveSlider(currentIndex + 1);
+            updateDots(currentIndex);
+        });
+        prevBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            moveSlider(currentIndex - 1);
+            updateDots(currentIndex);
+        });
+
+        // Initialize
+        moveSlider(0);
+        initializeDots();
+
+        // Handle the transition end for infinite loop
+        sliderInner.addEventListener('transitionend', () => {
+            if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+                sliderInner.style.transition = 'none';
+                moveSlider(currentIndex);
+            } else if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+                sliderInner.style.transition = 'none';
+                moveSlider(currentIndex);
+            }
         });
     });
 </script>
