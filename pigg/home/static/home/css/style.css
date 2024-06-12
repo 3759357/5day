@@ -27,7 +27,6 @@ a {
     text-decoration: none;
     font-family: 'MapoAgape';
     color: #7D5D58;
-    padding: 20px;
 }
 
 .title {
@@ -56,7 +55,16 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px;
 }
+.top a{
+    text-decoration: none;
+    font-family: 'MapoAgape';
+    color: #7D5D58;
+    padding: 20px;
+}
+
+
 
 .main-top {
     background-image: url('image49.png');
@@ -64,10 +72,21 @@ p {
     display: flex;
     justify-content: space-between; /* 아이템 간 공간 분배 */
     align-items: center;
-    font-family: 'MapoAgape';
+    padding: 20px;
 
 }
 
+.main-top a{
+    text-decoration: none;
+    font-family: 'MapoAgape';
+    color: #7D5D58;
+    padding: 20px;
+
+}
+.main-top img{
+    left:30px;
+
+}
 .container {
     display: flex;
     align-items: center; /* 요소들을 세로 중앙에 정렬 */
@@ -81,17 +100,23 @@ p {
 .bottom {
     display: flex;
     align-items: center;
-    background-color: #7A6966; /* 배경색 설정 */
-    height: 10px;
-    width: auto;
+
 }
 
 .bottom a {
-    display: flex;
+    display: inline;
+    align-items: center;
     text-decoration: none; /* 링크 밑줄 제거 */
     color: white; /* 링크 색상 설정 */
+
+
 }
 
+
+.container img {
+    width: 100%; /* 이미지를 화면 너비에 맞춤 */
+    height: auto; /* 이미지 높이 자동 조정 */
+}
 input {
     display: flex;
     border-width: thin;

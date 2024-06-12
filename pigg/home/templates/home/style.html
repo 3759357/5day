@@ -19,6 +19,7 @@
 <body>
 
 <div class="top">
+
     <a href="/">
         <img src="{% static 'home/main_feed_image/main_feed4.png' %}" alt="Main Feed Image 1">
     </a>
@@ -50,37 +51,31 @@
     <img src="{% static 'home/style/style5.png' %}" alt="Main Feed Image 1">
 </div>
 
-<footer class="bottom" style="position: relative;">
+<div class="bottom" style="position: relative;">
+    <img src="{% static 'home/main_feed_image/bottom.png' %}" style="width: 100%;">
 
-    <div style="position: relative; left :30%; ">
-        <img src="{% static 'home/main_feed_image/main_feed3.png' %}" style="position: relative;display: block; width: 70%; ">
+
+
+
+    <div style="position: absolute; font-size: 1.1vw; display:inline; left :5%; top:63% ">
+        <a href="/history" >오일내 스토리</a><a>&ensp;</a><a>&ensp;</a><a>&ensp;</a>
+    <a href="/style">오일내 스타일</a><a>&ensp;</a><a>&ensp;</a><a>&ensp;</a>
+    <a href="/franchise">가맹 안내</a><a>&ensp;</a><a>&ensp;</a><a>&ensp;</a>
+    <a href="/menu">메뉴 안내</a><a>&ensp;</a><a>&ensp;</a><a>&ensp;</a>
+    <a href="/restaurant">매장 안내</a><a>&ensp;</a><a>&ensp;</a><a>&ensp;</a>
+    <a href="/review">고객센터</a><a>&ensp;</a><a>&ensp;</a><a>&ensp;</a>
+
     </div>
 
-    <div style="position: relative; left :70%; top:80%;">
-        <br>
-        <img src="{% static 'home/main_feed_image/bottom_bar.png' %}" style="display: block;width: 80%;  ">
-    </div>
-
-    <div style="position: relative; left :-5%; top :2%; line-height:300%">
-        <br>
-        <br>
-    <a href="/history">오일내 스토리</a>
-    <a href="/style">오일내 스타일</a>
-    <a href="/franchise">가맹 안내</a>
-    <a href="/menu">메뉴 안내</a>
-    <a href="/restaurant">매장 안내</a>
-    <a href="/review">고객센터</a>
-    <a href="/story">오일내 소식</a>
-    </div>
-
-    <div style="position: relative; left :15%; line-height:300%">
+    <div style="position: absolute; font-size: 1.1vw; right :14%;line-height:300%; ">
     <a>가맹번호 : 1551-5105 </a><br>
     <a href="/">
         인스타 @5day_official
     </a><br>
     <a>대표자 전현수</a>
     </div>
-</footer>
+</div>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
