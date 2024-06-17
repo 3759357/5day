@@ -1,79 +1,69 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
     <link rel="icon" href="{% static 'home/main_feed_image/main_feed4.png' %}" type="image/x-icon">
     <title>오일내</title>
     <style>
-        .fade-in {
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-        }
-
-        .slider-container {
-            max-width: 600px;
-            margin: auto;
-            position: relative;
+        body {
+            font-family: Arial, sans-serif;
         }
 
         .slider {
             position: relative;
+            width: 85vw;
+            height: 30vh;
+            max-width: 85%;
+            max-height:15%;
             overflow: hidden;
-            width: 100%;
-            height: 400px; /* 슬라이더 높이 설정 */
+            box-sizing: border-box;
         }
 
         .slides {
             display: flex;
-            transition: transform 0.5s ease;
-            width: 100%;
-            height: 100%; /* 슬라이더 높이와 맞추기 */
+            gap: 8.1%;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
         }
 
-        .slide {
-            flex: 0 0 100%;
-            max-width: 100%;
-            height: 100%; /* 슬라이더 높이와 맞추기 */
+        .slides img {
+            width: 100%;
+            height: auto;
+
+            border: 0;
+            object-fit: cover; /* Ensure the image covers the container */
         }
 
-        .slide img {
-            width: 100%;
-            height: 100%; /* 이미지가 슬라이더 전체를 덮도록 설정 */
-            object-fit: cover; /* 이미지 비율 유지 */
-        }
+
 
         .prev, .next {
-            cursor: pointer;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: transparent;
             color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            transition: background-color 0.3s ease;
+            border: none;
+            padding: 10px;
+            width: 8%;
+
+        }
+
+        .prev {
+            left: 0;
         }
 
         .next {
             right: 0;
         }
-
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
     </style>
 </head>
 <body>
+
 <div class="top">
     <a href="/">
         <img src="{% static 'home/main_feed_image/main_feed4.png' %}" alt="Main Feed Image 1">
@@ -93,36 +83,38 @@
 <div class="container fade-in">
     <img src="{% static 'home/menu/menu1.png' %}" alt="Main Feed Image 1">
 </div>
-
-<div class="container fade-in">
+<div class="container fade-in" style="position: relative;">
     <img src="{% static 'home/menu/menu2.png' %}" alt="Main Feed Image 2">
-</div>
 
-<div class="slider-container">
-    <h2>Image Slider 1</h2>
-    <div class="slider" id="slider1">
+    <div class="slider" id="slider1" style="position: absolute; top: 28%; left :15%;  ">
         <div class="slides">
-            <div class="slide"><img src="{% static 'home/images/image1.jpg' %}" alt="Image 1"></div>
-            <div class="slide"><img src="{% static 'home/images/image2.jpg' %}" alt="Image 2"></div>
-            <div class="slide"><img src="{% static 'home/images/image3.jpg' %}" alt="Image 3"></div>
+            <img src="{% static 'home/menu/fork1.png' %}" alt="Image 1">
+            <img src="{% static 'home/menu/fork2.png' %}" alt="Image 1">
+            <img src="{% static 'home/menu/fork3.png' %}" alt="Image 1">
+            <img src="{% static 'home/menu/fork4.png' %}" alt="Image 1">
+            <img src="{% static 'home/menu/fork5.png' %}" alt="Image 1">
+
         </div>
-        <div class="prev" onclick="prevSlide('slider1')">&#10094;</div>
-        <div class="next" onclick="nextSlide('slider1')">&#10095;</div>
+        <button class="next" onclick="nextSlide(1)"><img src="{% static 'home/menu/button_next.png' %}" alt="Image 1"></button>
+    </div>
+
+    <div class="slider" id="slider2"  style="position: absolute; top: 60%; left :15%; max-height:25%;">
+        <div class="slides" style="gap: 9%;">
+            <img src="{% static 'home/menu/meal1.png' %}" alt="Image 4">
+            <img src="{% static 'home/menu/meal2.png' %}" alt="Image 4">
+            <img src="{% static 'home/menu/meal3.png' %}" alt="Image 4">
+            <img src="{% static 'home/menu/meal4.png' %}" alt="Image 4">
+            <img src="{% static 'home/menu/meal5.png' %}" alt="Image 4">
+            <img src="{% static 'home/menu/meal6.png' %}" alt="Image 4">
+        </div>
+
+        <button class="next" onclick="nextSlide(2)"><img src="{% static 'home/menu/button_next.png' %}" alt="Image 1"></button>
+
     </div>
 </div>
 
-<div class="slider-container">
-    <h2>Image Slider 2</h2>
-    <div class="slider" id="slider2">
-        <div class="slides">
-            <div class="slide"><img src="{% static 'home/images/image4.jpg' %}" alt="Image 4"></div>
-            <div class="slide"><img src="{% static 'home/images/image5.jpg' %}" alt="Image 5"></div>
-            <div class="slide"><img src="{% static 'home/images/image6.jpg' %}" alt="Image 6"></div>
-        </div>
-        <div class="prev" onclick="prevSlide('slider2')">&#10094;</div>
-        <div class="next" onclick="nextSlide('slider2')">&#10095;</div>
-    </div>
-</div>
+
+
 
 <div class="bottom" style="position: relative;">
     <img src="{% static 'home/main_feed_image/bottom.png' %}" style="width: 100%;">
@@ -149,38 +141,45 @@
     </div>
 </div>
 
+    <script>
+        let slideIndex1 = 0;
+        let slideIndex2 = 0;
+        const slides1 = document.querySelectorAll('#slider1 .slides img');
+        const slides2 = document.querySelectorAll('#slider2 .slides img');
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const sliders = document.querySelectorAll('.slider');
+        function showSlides(slideIndex, sliderId, slides) {
+            if (slideIndex+2 >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
 
-        sliders.forEach(slider => {
-            slider.dataset.index = 0;
-        });
+            const slider = document.querySelector(sliderId + ' .slides');
+            slider.style.transform = `translateX(${-slideIndex * 30}%)`;
 
-        function prevSlide(sliderId) {
-            const slider = document.getElementById(sliderId);
-            const slides = slider.querySelector('.slides');
-            const slideWidth = slides.firstElementChild.clientWidth;
-            let slideIndex = Math.max(parseInt(slider.dataset.index) - 1, 0);
-            slides.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
-            slider.dataset.index = slideIndex;
+            return slideIndex;
         }
 
-        function nextSlide(sliderId) {
-            const slider = document.getElementById(sliderId);
-            const slides = slider.querySelector('.slides');
-            const slideWidth = slides.firstElementChild.clientWidth;
-            const slideCount = slides.children.length;
-            let slideIndex = Math.min(parseInt(slider.dataset.index) + 1, slideCount - 1);
-            slides.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
-            slider.dataset.index = slideIndex;
+        function nextSlide(sliderNum) {
+            if (sliderNum === 1) {
+                slideIndex1++;
+                slideIndex1 = showSlides(slideIndex1, '#slider1', slides1);
+            } else if (sliderNum === 2) {
+                slideIndex2++;
+                slideIndex2 = showSlides(slideIndex2, '#slider2', slides2);
+            }
         }
 
-        window.prevSlide = prevSlide;
-        window.nextSlide = nextSlide;
-    });
-</script>
+        function prevSlide(sliderNum) {
+            if (sliderNum === 1) {
+                slideIndex1--;
+                slideIndex1 = showSlides(slideIndex1, '#slider1', slides1);
+            } else if (sliderNum === 2) {
+                slideIndex2--;
+                slideIndex2 = showSlides(slideIndex2, '#slider2', slides2);
+            }
+        }
 
+        // Initialize the sliders
+        showSlides(slideIndex1, '#slider1', slides1);
+        showSlides(slideIndex2, '#slider2', slides2);
+    </script>
 </body>
 </html>

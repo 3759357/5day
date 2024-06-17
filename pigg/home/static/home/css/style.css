@@ -55,13 +55,20 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 2em;
+
 }
 .top a{
     text-decoration: none;
     font-family: 'MapoAgape';
     color: #7D5D58;
-    padding: 20px;
+    padding: 10px;
+}
+.top img{
+    position: absolute;
+    left:5%;
+    top:1%;
+
 }
 
 
@@ -72,19 +79,19 @@ p {
     display: flex;
     justify-content: space-between; /* 아이템 간 공간 분배 */
     align-items: center;
-    padding: 20px;
-
+    padding: 2em;
 }
 
 .main-top a{
     text-decoration: none;
     font-family: 'MapoAgape';
     color: #7D5D58;
-    padding: 20px;
-
+    padding: 10px;
 }
 .main-top img{
-    left:30px;
+    position: absolute;
+    left:5%;
+    top:1%;
 
 }
 .container {
