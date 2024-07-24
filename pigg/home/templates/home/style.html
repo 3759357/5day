@@ -14,6 +14,55 @@
         .fade-in.visible {
             opacity: 1;
         }
+        .slider {
+            position: relative;
+            width: 85vw;  /* 85% of the viewport width */
+            height: 30vh; /* 30% of the viewport height */
+            max-width: 100%;
+            padding: 5%;
+            overflow: hidden;
+            box-sizing: border-box;
+            border: 2px solid #ddd;
+            margin-top: 20px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .slides .slide {
+            width: calc(100% / 5); /* Divide by 5 to show 5 slides at once */
+            height: 100%;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            padding: 20px;
+            box-sizing: border-box;
+            border-right: 1px solid #ddd; /* Optional: Add border between slides */
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
     </style>
 </head>
 <body>
@@ -47,9 +96,22 @@
 <div class="container fade-in">
     <img src="{% static 'home/style/style4.png' %}" alt="Main Feed Image 1">
 </div>
-<div class="container fade-in">
+<div class="container fade-in" style="position: relative;">
     <img src="{% static 'home/style/style5.png' %}" alt="Main Feed Image 1">
+    <div class="slider" id="textSlider" style="position: absolute;">
+        <div class="slides">
+            <div class="slide">Text Slide 1</div>
+            <div class="slide">Text Slide 2</div>
+            <div class="slide">Text Slide 3</div>
+            <div class="slide">Text Slide 4</div>
+            <div class="slide">Text Slide 5</div>
+            <div class="slide">Text Slide 6</div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
 </div>
+
 
 <div class="bottom" style="position: relative;">
     <img src="{% static 'home/main_feed_image/bottom.png' %}" style="width: 100%;">
@@ -99,6 +161,38 @@
             observer.observe(element);
         });
     });
+
+    let slideIndex = 0;
+        const slides = document.querySelectorAll('#textSlider .slides .slide');
+        const totalSlides = slides.length;
+        const slidesToShow = 5; // Number of slides to show at once
+
+        function showSlides(slideIndex) {
+            if (slideIndex >= totalSlides) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = totalSlides - slidesToShow;
+
+            const slider = document.querySelector('#textSlider .slides');
+            slider.style.transform = `translateX(${-slideIndex * (100 / slidesToShow)}%)`;
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex > totalSlides - slidesToShow) {
+                slideIndex = 0;
+            }
+            showSlides(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            if (slideIndex < 0) {
+                slideIndex = totalSlides - slidesToShow;
+            }
+            showSlides(slideIndex);
+        }
+
+        // Initialize the slider
+        showSlides(slideIndex);
 </script>
 
 </body>
