@@ -3,6 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.shortcuts import render
 from .models import Post
+from .models import Days
 from django.views.generic import ListView,DetailView
 from django.core.mail import EmailMessage
 
@@ -32,10 +33,12 @@ def story(request):
     return render(request, 'home/story.html', {'postlist': postlist})
 
 def style(request):
+    days=Days.objects.all()
 
     return render(
         request,
-        'home/style.html'
+        'home/style.html',
+        {'days' : days}
     )
 
 def menu(request):

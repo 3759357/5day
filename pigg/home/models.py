@@ -11,3 +11,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.postname
+
+
+class Days(models.Model):
+    franchise = models.CharField(max_length=50)
+    days = models.IntegerField()
+
+    def __str__(self):
+        return self.franchise

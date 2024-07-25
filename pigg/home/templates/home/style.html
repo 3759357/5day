@@ -16,14 +16,13 @@
         }
         .slider {
             position: relative;
-            width: 85vw;  /* 85% of the viewport width */
+            width: 100vw;  /* 85% of the viewport width */
             height: 30vh; /* 30% of the viewport height */
             max-width: 100%;
             padding: 5%;
             overflow: hidden;
-            box-sizing: border-box;
-            border: 2px solid #ddd;
             margin-top: 20px;
+
         }
 
         .slides {
@@ -40,9 +39,6 @@
             justify-content: center;
             align-items: center;
             font-size: 2em;
-            padding: 20px;
-            box-sizing: border-box;
-            border-right: 1px solid #ddd; /* Optional: Add border between slides */
         }
 
         .prev, .next {
@@ -98,14 +94,48 @@
 </div>
 <div class="container fade-in" style="position: relative;">
     <img src="{% static 'home/style/style5.png' %}" alt="Main Feed Image 1">
-    <div class="slider" id="textSlider" style="position: absolute;">
+    <div class="slider" id="textSlider" style="position: absolute; top:40%">
         <div class="slides">
-            <div class="slide">Text Slide 1</div>
-            <div class="slide">Text Slide 2</div>
-            <div class="slide">Text Slide 3</div>
-            <div class="slide">Text Slide 4</div>
-            <div class="slide">Text Slide 5</div>
-            <div class="slide">Text Slide 6</div>
+
+
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day1.png' %}" alt="Main Feed Image 1" style="position: absolute;">
+                <div style="position: absolute; top:50%; left:40%;">
+                    {{ days.0.days }}
+                </div>
+            </div>
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day2.png' %}" alt="Main Feed Image 1" style="position: absolute;">
+                <div style="position: absolute;top:50%; left:40%;">
+                    {{ days.1.days }}
+                </div>
+            </div>
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day3.png' %}" alt="Main Feed Image 1" style="position: absolute;">
+                <div style="position: absolute;top:50%; left:40%;">
+                    {{ days.2.days }}
+                </div>
+            </div>
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day4.png' %}" alt="Main Feed Image 1" style="position: absolute;">
+                <div style="position: absolute;top:50%; left:40%;">
+                    {{ days.3.days }}
+                </div>
+            </div>
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day5.png' %}" alt="Main Feed Image 1" style="position: absolute;">
+                <div style="position: absolute;top:50%; left:40%;">
+                    {{ days.4.days }}
+                </div>
+            </div>
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day6.png' %}" alt="Main Feed Image 1" style="position: absolute;">
+                <div style="position: absolute;top:50%; left:40%;">
+                    {{ days.5.days }}
+                </div>
+            </div>
+
+
         </div>
         <button class="prev" onclick="prevSlide()">&#10094;</button>
         <button class="next" onclick="nextSlide()">&#10095;</button>
