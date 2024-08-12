@@ -66,7 +66,51 @@
             color: #fff;
             left:142%;
         }
+.slider {
+            position: relative;
+            width: 100vw;  /* 85% of the viewport width */
+            height: 30vh; /* 30% of the viewport height */
+            max-width: 100%;
+            padding: 5%;
+            overflow: hidden;
+            margin-top: 20px;
 
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .slides .slide {
+            width: calc(100% / 5); /* Divide by 5 to show 5 slides at once */
+            height: 100%;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
 
 
     </style>
@@ -171,8 +215,54 @@
     <img src="{% static 'home/main_feed_image/feed7.png' %}" alt="Main Feed Image 1">
 </div>
 
-<div class="container fade-in">
-    <img src="{% static 'home/main_feed_image/feed8.png' %}" alt="Main Feed Image 1">
+<div class="container fade-in" style="position: relative;">
+    <img src="{% static 'home/style/style5.png' %}" alt="Main Feed Image 1">
+    <div class="slider" id="textSlider" style="position: absolute; top:40%">
+        <div class="slides">
+
+
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day1.png' %}" alt="Main Feed Image 1" style="position: absolute; width: 16vw;">
+                <div style="position: absolute; top:50%; left:40%;">
+                    {{ days.0.days }}
+                </div>
+            </div>
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day2.png' %}" alt="Main Feed Image 1" style="position: absolute;width: 17vw;">
+                <div style="position: absolute;top:50%; left:40%;">
+                    {{ days.1.days }}
+                </div>
+            </div>
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day3.png' %}" alt="Main Feed Image 1" style="position: absolute;width: 17vw;">
+                <div style="position: absolute;top:50%; left:40%;">
+                    {{ days.2.days }}
+                </div>
+            </div>
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day4.png' %}" alt="Main Feed Image 1" style="position: absolute;width: 17vw;">
+                <div style="position: absolute;top:50%; left:40%;">
+                    {{ days.3.days }}
+                </div>
+            </div>
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day5.png' %}" alt="Main Feed Image 1" style="position: absolute;width: 17vw;">
+                <div style="position: absolute;top:50%; left:40%;">
+                    {{ days.4.days }}
+                </div>
+            </div>
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day6.png' %}" alt="Main Feed Image 1" style="position: absolute;width: 17vw;">
+                <div style="position: absolute;top:50%; left:40%;">
+                    {{ days.5.days }}
+                </div>
+            </div>
+
+
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
 </div>
 
 
@@ -286,6 +376,37 @@
             }
         });
     });
+    let slideIndex = 0;
+        const slides = document.querySelectorAll('#textSlider .slides .slide');
+        const totalSlides = slides.length;
+        const slidesToShow = 5; // Number of slides to show at once
+
+        function showSlides(slideIndex) {
+            if (slideIndex >= totalSlides) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = totalSlides - slidesToShow;
+
+            const slider = document.querySelector('#textSlider .slides');
+            slider.style.transform = `translateX(${-slideIndex * (100 / slidesToShow)}%)`;
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex > totalSlides - slidesToShow) {
+                slideIndex = 0;
+            }
+            showSlides(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            if (slideIndex < 0) {
+                slideIndex = totalSlides - slidesToShow;
+            }
+            showSlides(slideIndex);
+        }
+
+        // Initialize the slider
+        showSlides(slideIndex);
 </script>
 
 </body>

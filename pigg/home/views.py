@@ -15,9 +15,12 @@ from django.template.loader import render_to_string
 from django.http import HttpResponse
 # Create your views here.
 def main_feed(request):
+    days=Days.objects.all()
+
     return render(
         request,
-        'home/main_feed.html'
+        'home/main_feed.html',
+        {'days': days}
     )
 
 
