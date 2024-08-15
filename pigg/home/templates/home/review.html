@@ -25,12 +25,12 @@
     <a href="/story">오일내 소식</a>
 </div>
 
-<div class="container" style="position: relative;">
+<div class="container" style="position: relative;overflow:hidden;">
     <img src="{% static 'home/review/back.png' %}">
     <div style="position: absolute; left: 14.5%; top: 25%; width: 10%;">
         <img src="{% static 'home/review/message.png' %}" style="display: block; margin-left: auto;">
     </div>
-    <form action="./send/" method="POST">
+    <form action="./send/" method="POST" style="overflow:hidden;">
         {% csrf_token %}
         <div style="position: absolute; left: 30.5%; top: 13%; padding:1%;width: 100%; height:auto;">
             <p style="font-size: 1.7vw; padding:1%;">제목</p>

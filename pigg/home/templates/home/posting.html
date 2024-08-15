@@ -30,7 +30,12 @@
 
         <div style="position:absolute; tpo:40%; width: 85%; left:5%; padding :2em; ">
             <div>&ensp;</div><div>&ensp;</div>
-            <img src = "{{ post.photo.url }}" style="width: 100%;">
+            {% if post.photo %}
+                <img src="{{ post.photo.url }}" style="width: 100%;">
+            {% else %}
+                                <p style ="padding :20%;width: 100%;">No photo available</p>
+
+            {% endif %}
             <div>&ensp;</div>
             <p style="font-size : 1.5vw; ">{{post.postname}}</p>
             <div>&ensp;</div>
