@@ -86,7 +86,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+
             color: white;
             border: none;
             padding: 10px;
@@ -173,7 +173,7 @@
                 </div>
                 <div class="slider__btn">
 
-                    <a href="#"  role="button" aria-label="오른쪽 이미지" style="top:5%; ">
+                    <a href="#" class="next" role="button" aria-label="오른쪽 이미지" style="top:5%; ">
                         <img src="{% static 'home/main_feed_image/button_next.png' %}" style="display: block; ">
                     </a>
                 </div>
@@ -248,8 +248,8 @@
 
 
         </div>
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
+        <button class="prev" style="background-color: rgba(0, 0, 0, 0.5);" onclick="prevSlide()">&#10094;</button>
+        <button class="next" style="background-color: rgba(0, 0, 0, 0.5);" onclick="nextSlide()">&#10095;</button>
     </div>
 </div>
 
