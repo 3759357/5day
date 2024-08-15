@@ -103,41 +103,16 @@ class PostDetail(DetailView):
 
 
 def send_email(request):
-    if request.method == 'POST':
-        # 폼 필드 데이터 가져오기
-        title = request.POST.get('title')
-        name = request.POST.get('name')
-        number = request.POST.get('number')
-        place = request.POST.get('place')
-        content = request.POST.get('content')
+    title = request.POST.get('title')
+    content = "성명 : " + request.POST.get('name') + "\n" + "연락처 : " + request.POST.get('number') +"\n" + "방문지점 :" + request.POST.get('place') +"\n" +"내용 :" + request.POST.get('content')
 
-        # 필수 필드 확인
-        if not title or not name or not number or not place or not content:
-            return HttpResponseBadRequest("모든 필드를 입력해 주세요.")
-
-        # 이메일 내용 구성
-        email_content = {
-            'title': title,
-            'name': name,
-            'number': number,
-            'place': place,
-            'content': content
-        }
-
-        msg_html = render_to_string('email_format.html', email_content)
-
-        # 이메일 보내기
-        msg = EmailMessage(
-            subject=title,
-            body=msg_html,
-            from_email="djangoemailtester001@gmail.com",
-            to=["recipient@example.com"],  # 여기에 실제 받는 사람 이메일 주소를 넣어야 합니다.
-        )
-        msg.content_subtype = 'html'
-        msg.send()
-
-        # 성공 후 리다이렉트
-        return redirect(reverse('index'))
-
-    # GET 요청 시 처리
-    return HttpResponseBadRequest("잘못된 요청입니다.")
+    email = EmailMessage(
+        title,  # 이메일 제목
+        content,
+        to=['wornjs6327@naver.com'],  # 받는 이메일
+    )
+    email.send()
+    return render(
+        request,
+        'home/review.html'
+    )

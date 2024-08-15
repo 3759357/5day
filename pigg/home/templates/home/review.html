@@ -30,31 +30,34 @@
     <div style="position: absolute; left: 14.5%; top: 25%; width: 10%;">
         <img src="{% static 'home/review/message.png' %}" style="display: block; margin-left: auto;">
     </div>
-    <form action="./send/" method="POST" style="overflow:hidden;">
+
+    <!-- Form Section -->
+    <form action="/review/send/" method="POST" onsubmit="sendAlert()">
         {% csrf_token %}
         <div style="position: absolute; left: 30.5%; top: 13%; padding:1%;width: 100%; height:auto;">
             <p style="font-size: 1.7vw; padding:1%;">제목</p>
-            <input style="position: absolute; font-size: 1vw;width:60%; height:10%;" type="text" name="title" id="title" size="20" placeholder="제목을 입력해주세요.">
+            <input style="position: absolute; font-size: 1vw;width:60%; height:10%;padding: 1%;" type="text" name="title" id="title" size="20" placeholder="제목을 입력해주세요.">
             <p style="font-size: 1.7vw; padding:1%;">&ensp;</p>
             <p style="font-size: 1.7vw; padding:1%;">성명</p>
-            <input style="position: absolute;font-size: 1vw;width:60%; height:10%;" type="text" name="name" id="name" size="20" placeholder="성명을 입력해주세요.">
+            <input style="position: absolute;font-size: 1vw;width:60%; height:10%;padding: 1%;" type="text" name="name" id="name" size="20" placeholder="성명을 입력해주세요.">
             <p style="font-size: 1.7vw; padding:1%;">&ensp;</p>
             <p style="font-size: 1.7vw; padding:1%;">연락처</p>
-            <input style="position: absolute;font-size: 1vw;width:60%; height:10%;" type="text" name="number"id="number" size="20" placeholder="연락처를 입력해주세요.">
+            <input style="position: absolute;font-size: 1vw;width:60%; height:10%;padding: 1%;" type="text" name="number"id="number" size="20" placeholder="연락처를 입력해주세요.">
             <p style="font-size: 1.7vw; padding:1%;">&ensp;</p>
             <p style="font-size: 1.7vw; padding:1%;">방문지점</p>
-            <input style="position: absolute;font-size: 1vw;width:60%; height:10%;" type="text" name="place" id="place"size="20" placeholder="방문지점을 입력해주세요.">
+            <input style="position: absolute;font-size: 1vw; width:60%; height:10%;padding: 1%;" type="text" name="place" id="place"size="20" placeholder="방문지점을 입력해주세요.">
             <p style="font-size: 1.7vw; padding:1%;">&ensp;</p>
             <p style="font-size: 1.7vw; padding:1%;">내용</p>
-            <input style="position: absolute;font-size: 1vw;width:60%; height:30%;" type="text" name="content" id="content"size="20" placeholder="내용을 입력해주세요.">
-            <p style="font-size: 1.7vw; padding:1%;">이메일</p>
+            <textarea style="position: absolute;font-size: 1vw; width:60%; height:30%; background: transparent; padding: 1%; " type="text" name="content" id="content"size="20" placeholder="내용을 입력해주세요."></textarea>
+        </div>
+
+        <!-- Submit button -->
+        <div style="position: absolute; right: 8.4%; top: 82%; width: 10%;">
+            <button type="submit" style="border:none; background:none;">
+                <img src="{% static 'home/review/send.png' %}" alt="Send Button">
+            </button>
         </div>
     </form>
-    <div style="position: absolute; right: 8.4%; top: 82%; width: 10%;">
-        <a href="javascript:void(0);" onclick="sendAlert();">
-            <img src="{% static 'home/review/send.png' %}">
-        </a>
-    </div>
 </div>
 
 <div class="bottom" style="position: relative;">
