@@ -34,18 +34,24 @@
         <img src="{% static 'home/story/story1.png' %}" alt="Main Feed Image 1">
 
 
-    <div style="position:absolute; width:40%; height:auto; right:10%; top:20%;">
-        {% for list in postlist %}
+    <div style="position:absolute; width:49%; height:auto; left:40%; top:20%;">
 
-            <ul>
+            {% for list in postlist %}
+            <ul style="font-size: 1.5vw;">
                 <p style="font-size: 1.5vw;" >
                     <a href="/story/{{list.pk}}" style="padding 0%;">{{list.postname}}</a></p><br>
                 <p style="font-size: 1.2vw;">{{list.contents}}</p>
-                <br><br><br>
+
+                <br><br><br><br><br><br>
             </ul>
         {% endfor %}
         </div>
-
+    <div style="position:absolute; width:40%; height:auto; left:10%; top:18%;font-size: 1.5vw;">
+        {% for list in postlist %}
+        <img src = "{{ list.photo.url }}" style="width: 60%;">
+        <br><br><br>
+        {% endfor %}
+    </div>
 
 
 </div>

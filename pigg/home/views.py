@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.shortcuts import render
@@ -8,7 +8,7 @@ from django.views.generic import ListView,DetailView
 from django.core.mail import EmailMessage
 
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest
 from django.urls import reverse
 from django.core.mail import send_mail, EmailMessage
 from django.template.loader import render_to_string
@@ -103,16 +103,41 @@ class PostDetail(DetailView):
 
 
 def send_email(request):
-    inputReceiver = request.POST['title']
-    inputTitle = request.POST['name']
-    inputContent = request.POST['number']
+    if request.method == 'POST':
+        # 폼 필드 데이터 가져오기
+        title = request.POST.get('title')
+        name = request.POST.get('name')
+        number = request.POST.get('number')
+        place = request.POST.get('place')
+        content = request.POST.get('content')
 
-    content = {'inputReceiver': inputReceiver, 'inputTitle': inputTitle, 'inputContent': inputContent}
+        # 필수 필드 확인
+        if not title or not name or not number or not place or not content:
+            return HttpResponseBadRequest("모든 필드를 입력해 주세요.")
 
-    msg_html = render_to_string('home/dd.html', content)
+        # 이메일 내용 구성
+        email_content = {
+            'title': title,
+            'name': name,
+            'number': number,
+            'place': place,
+            'content': content
+        }
 
-    msg = EmailMessage(subject=inputTitle, body=msg_html, from_email="wornjs6327@naver.com",
-                       bcc=inputReceiver.split(','))
-    msg.content_subtype = 'html'
-    msg.send()
-    return HttpResponseRedirect(reverse('dd'))
+        msg_html = render_to_string('email_format.html', email_content)
+
+        # 이메일 보내기
+        msg = EmailMessage(
+            subject=title,
+            body=msg_html,
+            from_email="djangoemailtester001@gmail.com",
+            to=["recipient@example.com"],  # 여기에 실제 받는 사람 이메일 주소를 넣어야 합니다.
+        )
+        msg.content_subtype = 'html'
+        msg.send()
+
+        # 성공 후 리다이렉트
+        return redirect(reverse('index'))
+
+    # GET 요청 시 처리
+    return HttpResponseBadRequest("잘못된 요청입니다.")

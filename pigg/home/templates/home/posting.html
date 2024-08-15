@@ -1,10 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
 <html>
     <head>
-        <title>Posting!</title>
+        <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <link rel="icon" href="{% static 'home/main_feed_image/main_feed4.png' %}" type="image/x-icon">
+        <title>오일내</title>
     </head>
     <body>
-        <h1>게시글 개별 페이지입니다</h1>
-        <p>{{post.postname}}</p>
-        <p>{{post.contents}}</p>
+    <div class="top">
+    <a  href="/">
+        <img src="{% static 'home/main_feed_image/main_feed4.png' %}" >
+    </a>
+    <div>&ensp;</div><div>&ensp;</div><div>&ensp;</div><div>&ensp;</div><div>&ensp;</div><div>&ensp;</div>
+    <div>&ensp;</div><div>&ensp;</div><div>&ensp;</div><div>&ensp;</div><div>&ensp;</div>
+
+    <a href="/history">오일내 스토리</a>
+    <a href="/style">오일내 스타일</a>
+    <a href="/franchise">가맹 안내</a>
+    <a href="/menu">메뉴 안내</a>
+    <a href="/restaurant">매장 안내</a>
+    <a href="/review">고객센터</a>
+    <a href="/story">오일내 소식</a>
+
+</div>
+
+<div class="container" style="position:relative;">
+        <img src="{% static 'home/story/story1.png' %}" alt="Main Feed Image 1">
+
+
+        <div style="position:absolute; tpo:40%; width: 85%; left:5%; padding :2em; ">
+            <div>&ensp;</div><div>&ensp;</div>
+            <img src = "{{ post.photo.url }}" style="width: 100%;">
+            <div>&ensp;</div>
+            <p style="font-size : 1.5vw; ">{{post.postname}}</p>
+            <div>&ensp;</div>
+            <p style="font-size : 1vw; ">{{post.contents}}</p>
+        </div>
+</div>
+
+
+
+
+    <div class="bottom" style="position: relative;">
+    <img src="{% static 'home/main_feed_image/bottom.png' %}" style="width: 100%;">
+
+
+
+
+    <div style="position: absolute; font-size: 1.1vw; display:inline; left :5%; top:63% ">
+        <a href="/history" >오일내 스토리</a><a>&ensp;</a><a>&ensp;</a><a>&ensp;</a>
+    <a href="/style">오일내 스타일</a><a>&ensp;</a><a>&ensp;</a><a>&ensp;</a>
+    <a href="/franchise">가맹 안내</a><a>&ensp;</a><a>&ensp;</a><a>&ensp;</a>
+    <a href="/menu">메뉴 안내</a><a>&ensp;</a><a>&ensp;</a><a>&ensp;</a>
+    <a href="/restaurant">매장 안내</a><a>&ensp;</a><a>&ensp;</a><a>&ensp;</a>
+    <a href="/review">고객센터</a><a>&ensp;</a><a>&ensp;</a><a>&ensp;</a>
+
+    </div>
+
+    <div style="position: absolute; font-size: 1.1vw; right :14%;line-height:300%; ">
+    <a>가맹번호 : 1551-5105 </a><br>
+    <a href="/">
+        인스타 @5day_official
+    </a><br>
+    <a>대표자 전현수</a>
+    </div>
+</div>
+
+
     </body>
 </html>

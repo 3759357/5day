@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Blog List</title>
+
     </head>
     <body>
         <h1>게시판 페이지입니다</h1>
@@ -11,6 +12,7 @@
 
             <ul>
                 <li><a href="{{list.pk}}">{{list.postname}}</a></li>
+                <img src = "{{ post.photo.url }}" alt="" height="600">
             </ul>
         {% endfor %}
         </table>
