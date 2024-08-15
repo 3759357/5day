@@ -66,18 +66,8 @@
             color: #fff;
             left:142%;
         }
-.slider {
-            position: relative;
-            width: 100vw;  /* 85% of the viewport width */
-            height: 30vh; /* 30% of the viewport height */
-            max-width: 100%;
-            padding: 5%;
-            overflow: hidden;
-            margin-top: 20px;
 
-        }
-
-        .slides {
+.slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
             height: 100%;
@@ -92,7 +82,6 @@
             align-items: center;
             font-size: 2em;
         }
-
         .prev, .next {
             position: absolute;
             top: 50%;
@@ -111,7 +100,6 @@
         .next {
             right: 0;
         }
-
 
     </style>
 </head>
@@ -185,7 +173,7 @@
                 </div>
                 <div class="slider__btn">
 
-                    <a href="#" class="next" role="button" aria-label="오른쪽 이미지" style="top:5%; ">
+                    <a href="#"  role="button" aria-label="오른쪽 이미지" style="top:5%; ">
                         <img src="{% static 'home/main_feed_image/button_next.png' %}" style="display: block; ">
                     </a>
                 </div>
@@ -215,45 +203,45 @@
     <img src="{% static 'home/main_feed_image/feed7.png' %}" alt="Main Feed Image 1">
 </div>
 
-<div class="container fade-in" style="position: relative;">
+<div class="container fade-in"style="position: relative;overflow: hidden;">
     <img src="{% static 'home/style/style5.png' %}" alt="Main Feed Image 1">
-    <div class="slider" id="textSlider" style="position: absolute; top:40%">
+    <div class="slider" id="textSlider" style="position: absolute; top:58%;">
         <div class="slides">
 
 
             <div class="slide"style="position: relative;">
                 <img src="{% static 'home/style/day1.png' %}" alt="Main Feed Image 1" style="position: absolute; width: 16vw;">
-                <div style="position: absolute; top:50%; left:40%;">
+                <div style="position: absolute; top:40%; left:35%; font-size: 4vw;color: #7D5D58;">
                     {{ days.0.days }}
                 </div>
             </div>
             <div class="slide"style="position: relative;">
                 <img src="{% static 'home/style/day2.png' %}" alt="Main Feed Image 1" style="position: absolute;width: 17vw;">
-                <div style="position: absolute;top:50%; left:40%;">
+                <div style="position: absolute; top:43%; left:35%; font-size: 4vw;color: #7D5D58;">
                     {{ days.1.days }}
                 </div>
             </div>
             <div class="slide"style="position: relative;">
                 <img src="{% static 'home/style/day3.png' %}" alt="Main Feed Image 1" style="position: absolute;width: 17vw;">
-                <div style="position: absolute;top:50%; left:40%;">
+                <div style="position: absolute; top:43%; left:35%; font-size: 4vw;color: #7D5D58;">
                     {{ days.2.days }}
                 </div>
             </div>
             <div class="slide"style="position: relative;">
                 <img src="{% static 'home/style/day4.png' %}" alt="Main Feed Image 1" style="position: absolute;width: 17vw;">
-                <div style="position: absolute;top:50%; left:40%;">
+                <div style="position: absolute; top:43%; left:35%; font-size: 4vw;color: #7D5D58;">
                     {{ days.3.days }}
                 </div>
             </div>
             <div class="slide"style="position: relative;">
                 <img src="{% static 'home/style/day5.png' %}" alt="Main Feed Image 1" style="position: absolute;width: 17vw;">
-                <div style="position: absolute;top:50%; left:40%;">
+                <div style="position: absolute; top:43%; left:35%; font-size: 4vw;color: #7D5D58;">
                     {{ days.4.days }}
                 </div>
             </div>
             <div class="slide"style="position: relative;">
                 <img src="{% static 'home/style/day6.png' %}" alt="Main Feed Image 1" style="position: absolute;width: 17vw;">
-                <div style="position: absolute;top:50%; left:40%;">
+                <div style="position: absolute; top:43%; left:35%; font-size: 4vw;color: #7D5D58;">
                     {{ days.5.days }}
                 </div>
             </div>
