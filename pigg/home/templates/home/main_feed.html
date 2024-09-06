@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="naver-site-verification" content="8bcea8a09a72d8ba1b099c8e39a92044bb8a7551" />
     <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
     <link rel="icon" href="{% static 'home/main_feed_image/main_feed4.png' %}" type="image/x-icon">
     <title>오일내</title>
@@ -243,7 +244,18 @@
                     {{ days.5.days }}
                 </div>
             </div>
-
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day7.png' %}" alt="Main Feed Image 1" style="position: absolute;width: 17vw;">
+                <div style="position: absolute; top:48%; left:35%; font-size: 4vw;color: #7D5D58;">
+                    {{ days.6.days }}
+                </div>
+            </div>
+            <div class="slide"style="position: relative;">
+                <img src="{% static 'home/style/day8.png' %}" alt="Main Feed Image 1" style="position: absolute;width: 17vw;">
+                <div style="position: absolute; top:48%; left:35%; font-size: 4vw;color: #7D5D58;">
+                    {{ days.7.days }}
+                </div>
+            </div>
 
         </div>
         <button class="prev" style="background-color: rgba(0, 0, 0, 0.5);" onclick="prevSlide()">&#10094;</button>
